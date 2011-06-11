@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    if (typeof jQuery == 'undefined') {
+    document.write('<script src="', '{{ STATIC_URL }}js/jquery.min.js', '" type="text/javascript"><\/script>');
+        }
+  </script>
+  <script type="text/javascript" src="{{ STATIC_URL }}js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+  <script src="{{ STATIC_URL }}js/html5.js"></script>
+  <![endif]-->
+  {% block extrahead %}{% endblock %}
+</head>
+<body>
+{% block content %}{% endblock %}
+{% block extrajs %}{% endblock %}
+</body>
+</html>
